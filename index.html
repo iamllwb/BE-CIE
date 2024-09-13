@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte interactive GTA5</title>
+    <style>
+        body {
+            background-image: url('https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 4000px; /* Permet le défilement, ajuste selon la taille de la carte */
+        }
+
+        .button {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #grove-street {
+            top: 80%; /* Ajuste cette valeur pour bien placer le bouton */
+            left: 45%; /* Ajuste cette valeur pour bien placer le bouton */
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #000;
+            z-index: 10;
+        }
+
+        .zoom {
+            width: 600px; /* Taille de la zone zoomée */
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .zoom img {
+            width: 1200px; /* Taille de l'image dans la zone zoomée */
+            height: auto;
+            transform: scale(1.5); /* Zoom sur l'image */
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bouton pour Grove Street -->
+    <div id="grove-street" class="button" onclick="showPopup('grove-street-popup')">Grove Street</div>
+
+    <!-- Fenêtre contextuelle pour Grove Street -->
+    <div id="grove-street-popup" class="popup">
+        <h2>Grove Street</h2>
+        <p>Quartier célèbre pour les gangs dans GTA5.</p>
+
+        <!-- Zoom sur Grove Street -->
+        <div class="zoom">
+            <img src="https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png" alt="Zoom Grove Street" style="position: absolute; top: -1300px; left: -900px;">
+        </div>
+
+        <button onclick="closePopup('grove-street-popup')">Fermer</button>
+    </div>
+
+    <script>
+        function showPopup(id) {
+           
+
