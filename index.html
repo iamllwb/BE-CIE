@@ -24,16 +24,17 @@
             cursor: pointer;
         }
 
-        #grove-street {
-            top: 80%; /* Ajuste cette valeur pour bien placer le bouton */
-            left: 45%; /* Ajuste cette valeur pour bien placer le bouton */
+        #quartier-sud {
+            top: 60%; /* Ajuste ces pourcentages pour placer le bouton aux bons endroits */
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .popup {
             display: none;
             position: absolute;
-            top: 20%;
-            left: 20%;
+            top: 10%;
+            left: 10%;
             background-color: white;
             padding: 20px;
             border: 1px solid #000;
@@ -48,124 +49,64 @@
         }
 
         .zoom img {
-            width: 1200px; /* Taille de l'image dans la zone zoomée */
+            width: 2000px; /* Taille de l'image dans la zone zoomée */
             height: auto;
-            transform: scale(1.5); /* Zoom sur l'image */
-            transform-origin: center;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Bouton pour Grove Street -->
-    <div id="grove-street" class="button" onclick="showPopup('grove-street-popup')">Grove Street</div>
-
-    <!-- Fenêtre contextuelle pour Grove Street -->
-    <div id="grove-street-popup" class="popup">
-        <h2>Grove Street</h2>
-        <p>Quartier célèbre pour les gangs dans GTA5.</p>
-
-        <!-- Zoom sur Grove Street -->
-        <div class="zoom">
-            <img src="https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png" alt="Zoom Grove Street" style="position: absolute; top: -1300px; left: -900px;">
-        </div>
-
-        <button onclick="closePopup('grove-street-popup')">Fermer</button>
-    </div>
-
-    <script>
-        function showPopup(id) {
-           
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte interactive GTA5</title>
-    <style>
-        body {
-            background-image: url('https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 4000px; /* Permet le défilement, ajuste selon la taille de la carte */
         }
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte interactive GTA5</title>
-    <style>
-        body {
-            background-image: url('https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 4000px; /* Permet le défilement, ajuste selon la taille de la carte */
-        }
-
-        .button {
+        .point {
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 0, 0, 0.7);
             color: white;
-            padding: 10px;
+            padding: 5px;
             border-radius: 5px;
             cursor: pointer;
         }
 
         #grove-street {
-            top: 80%; /* Ajuste cette valeur pour bien placer le bouton */
-            left: 45%; /* Ajuste cette valeur pour bien placer le bouton */
-        }
-
-        .popup {
-            display: none;
-            position: absolute;
             top: 20%;
             left: 20%;
-            background-color: white;
-            padding: 20px;
-            border: 1px solid #000;
-            z-index: 10;
         }
 
-        .zoom {
-            width: 600px; /* Taille de la zone zoomée */
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .zoom img {
-            width: 1200px; /* Taille de l'image dans la zone zoomée */
-            height: auto;
-            transform: scale(1.5); /* Zoom sur l'image */
-            transform-origin: center;
+        #brokers {
+            top: 50%;
+            left: 30%;
         }
     </style>
 </head>
 <body>
 
-    <!-- Bouton pour Grove Street -->
-    <div id="grove-street" class="button" onclick="showPopup('grove-street-popup')">Grove Street</div>
+    <!-- Bouton pour Quartier Sud -->
+    <div id="quartier-sud" class="button" onclick="showPopup('quartier-sud-popup')">Quartier Sud</div>
+
+    <!-- Fenêtre contextuelle pour Quartier Sud -->
+    <div id="quartier-sud-popup" class="popup">
+        <h2>Quartier Sud</h2>
+        <p>Quartier appartenant aux Bloods.</p>
+
+        <!-- Image avec points interactifs -->
+        <div class="zoom">
+            <img src="https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png" alt="Zoom Quartier Sud" style="position: absolute; top: -1300px; left: -900px;">
+
+            <!-- Points interactifs sur la carte -->
+            <div id="grove-street" class="point" onclick="showPopup('grove-street-popup')">Grove Street</div>
+            <div id="brokers" class="point" onclick="showPopup('brokers-popup')">Brokers</div>
+        </div>
+
+        <button onclick="closePopup('quartier-sud-popup')">Fermer</button>
+    </div>
 
     <!-- Fenêtre contextuelle pour Grove Street -->
     <div id="grove-street-popup" class="popup">
         <h2>Grove Street</h2>
-        <p>Quartier célèbre pour les gangs dans GTA5.</p>
-
-        <!-- Zoom sur Grove Street -->
-        <div class="zoom">
-            <img src="https://www.bragitoff.com/wp-content/uploads/2015/11/GTAV_ATLUS_2048x2048.png" alt="Zoom Grove Street" style="position: absolute; top: -1300px; left: -900px;">
-        </div>
-
+        <p>Quartier appartenant aux Bloods.</p>
         <button onclick="closePopup('grove-street-popup')">Fermer</button>
+    </div>
+
+    <!-- Fenêtre contextuelle pour Brokers -->
+    <div id="brokers-popup" class="popup">
+        <h2>Brokers</h2>
+        <p>Quartier appartenant aux Brokers.</p>
+        <button onclick="closePopup('brokers-popup')">Fermer</button>
     </div>
 
     <script>
